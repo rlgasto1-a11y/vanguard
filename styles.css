@@ -643,6 +643,26 @@ footer a:hover { text-decoration: underline; }
 
   ul.menu li a { padding: 0.6rem 0.9rem; }
 
+  /* FIX: hamburger stays on the far right (mobile)  */
+nav {
+  flex-wrap: wrap;
+}
+
+.brand {
+  order: 1;
+}
+
+nav > label {
+  order: 2;
+  margin-left: auto;
+}
+
+/* menu drops to next row */
+ul.menu {
+  order: 3;
+  flex-basis: 100%;
+}
+
   /* hero */
   .hero { height: 60vh; }
   .site-inner { align-items: flex-start; }
@@ -708,24 +728,6 @@ footer a:hover { text-decoration: underline; }
   }
 }
 
-/* FIX: hamburger stays on the far right (mobile)  */
-nav {
-  flex-wrap: wrap;
-}
 
-.brand {
-  order: 1;
-}
-
-nav > label {
-  order: 2;
-  margin-left: auto;
-}
-
-/* menu drops to next row */
-ul.menu {
-  order: 3;
-  flex-basis: 100%;
-}
 
 
