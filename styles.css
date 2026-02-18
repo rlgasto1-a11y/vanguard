@@ -632,24 +632,23 @@ footer a:hover { text-decoration: underline; }
   /* ✅ DESKTOP NAV FIX */
   nav { 
     padding: 0.65rem 0; 
-    flex-wrap: nowrap;         /* keep everything on one row */
+    flex-wrap: nowrap;         
   }
 
   /* reset mobile ordering */
   .brand { 
-    order: 0;                  /* brand first */
+    order: 0;                  
     flex: 0 0 auto; 
-    margin-right: auto;        /* push menu to the right */
-  }
+    margin-right: auto;        
 
   /* hide hamburger and show menu */
   nav > label { display: none !important; }
 
   ul.menu {
-    order: 1;                  /* menu after brand */
+    order: 1;                  
     display: flex;
     gap: 1.25rem;
-    margin: 0 0 0 auto;        /* right align */
+    margin: 0 0 0 auto;        
     width: auto;
     max-height: none;
     opacity: 1;
