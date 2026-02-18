@@ -263,7 +263,7 @@ ul.menu li a:hover {
   text-align: center;
   padding: 1rem;
   color: var(--nav-ink);
-  margin-top: 0.75rem;
+  margin-top: 0;
 }
 
 .site-inner {
@@ -293,14 +293,14 @@ ul.menu li a:hover {
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 0.25rem;
-  text-align: center; /* ✅ keep centered on mobile */
+  text-align: center;
 }
 
 .hero p {
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.6;
-  text-align: center; /* ✅ keep centered on mobile */
+  text-align: center;
 }
 
 /* CTA button */
@@ -319,7 +319,7 @@ ul.menu li a:hover {
   box-shadow: 0 6px 18px rgba(2, 6, 23, 0.18);
   transition: background-color 180ms ease, transform 160ms ease, box-shadow 180ms ease;
   -webkit-tap-highlight-color: transparent;
-  margin: 0.75rem auto 0; /* ✅ centers button on mobile */
+  margin: 0.75rem auto 0;
 }
 .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(2, 6, 23, 0.22); }
 .cta:active { transform: translateY(0); box-shadow: 0 6px 14px rgba(2, 6, 23, 0.2); }
@@ -629,38 +629,65 @@ footer a:hover { text-decoration: underline; }
     --nav-link-size: 1.05rem;
   }
 
-  /* nav becomes horizontal */
-  nav { padding: 0.65rem 0; }
+  /* ✅ DESKTOP NAV FIX */
+  nav { 
+    padding: 0.65rem 0; 
+    flex-wrap: nowrap;         /* keep everything on one row */
+  }
+
+  /* reset mobile ordering */
+  .brand { 
+    order: 0;                  /* brand first */
+    flex: 0 0 auto; 
+    margin-right: auto;        /* push menu to the right */
+  }
 
   /* hide hamburger and show menu */
   nav > label { display: none !important; }
+
   ul.menu {
+    order: 1;                  /* menu after brand */
     display: flex;
     gap: 1.25rem;
-    margin-left: auto;
+    margin: 0 0 0 auto;        /* right align */
     width: auto;
     max-height: none;
     opacity: 1;
     overflow: visible;
     text-align: left;
-    flex-basis: auto; /* ✅ undo mobile full-width */
-    order: 0;         /* ✅ normal flow */
+    flex-basis: auto;
   }
 
   ul.menu li a { padding: 0.6rem 0.9rem; }
 
   /* hero */
   .hero { height: 60vh; }
-  .site-inner { align-items: flex-start; }
-  .blur-block { max-width: 62%; text-align: left; margin: 0; } /* left-align on medium+ */
-  .hero h2 { font-size: 1.55rem; text-align: left; }
-  .hero p { font-size: 1.05rem; text-align: left; }
 
-  /* keep CTA aligned with left text on medium+ */
-  .cta { margin: 0.75rem 0 0; }
+.site-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  /* services 2 columns */
-  .services-list { grid-template-columns: repeat(2, 1fr); }
+.blur-block {
+  max-width: 62%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 1.55rem;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.cta {
+  margin: 0.75rem auto 0;
+}
 
   /* results layout becomes 2 columns */
   .profit_growth {
@@ -713,8 +740,6 @@ footer a:hover { text-decoration: underline; }
     transform: none !important;
   }
 }
-
-
 
 
 
