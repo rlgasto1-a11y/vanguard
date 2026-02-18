@@ -708,7 +708,7 @@ footer a:hover { text-decoration: underline; }
   }
 }
 
-/* ---- FIX: hamburger stays on the far right (mobile) ---- */
+/* FIX: hamburger stays on the far right (mobile)  */
 nav {
   flex-wrap: wrap;
 }
