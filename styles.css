@@ -137,6 +137,12 @@ nav {
   z-index: 40;
 }
 
+/* ✅ MOBILE FIX: keep brand left, hamburger right, menu drops below */
+nav { flex-wrap: wrap; }
+.brand { order: 1; flex: 0 1 auto; }
+nav > label { order: 2; margin-left: auto; }
+ul.menu { order: 3; flex-basis: 100%; }
+
 /* BRAND */
 .brand {
   display: flex;
@@ -180,7 +186,6 @@ nav {
 
 /* HAMBURGER LABEL */
 nav > label {
-  margin-left: auto; /* ✅ forces hamburger to far right */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -282,7 +287,6 @@ ul.menu li a:hover {
 
   text-align: center;
 }
-
 
 .hero h2 {
   font-size: 1.15rem;
@@ -639,29 +643,11 @@ footer a:hover { text-decoration: underline; }
     opacity: 1;
     overflow: visible;
     text-align: left;
+    flex-basis: auto; /* ✅ undo mobile full-width */
+    order: 0;         /* ✅ normal flow */
   }
 
   ul.menu li a { padding: 0.6rem 0.9rem; }
-
-  /* FIX: hamburger stays on the far right (mobile)  */
-nav {
-  flex-wrap: wrap;
-}
-
-.brand {
-  order: 1;
-}
-
-nav > label {
-  order: 2;
-  margin-left: auto;
-}
-
-/* menu drops to next row */
-ul.menu {
-  order: 3;
-  flex-basis: 100%;
-}
 
   /* hero */
   .hero { height: 60vh; }
@@ -727,6 +713,7 @@ ul.menu {
     transform: none !important;
   }
 }
+
 
 
 
