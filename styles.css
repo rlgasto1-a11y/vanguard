@@ -1,7 +1,7 @@
 /* CSS BY Rashad Gaston */
 
-/* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"*/
+/* IMPORTED FONTS */
+/* IMPORT "INTER" FROM GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* CSS RESET */
@@ -32,9 +32,7 @@ time, mark, audio, video {
 
 /* HTML5 display-role reset */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+footer, header, hgroup, menu, nav, section { display: block; }
 
 body { line-height: 1; }
 ol, ul { list-style: none; }
@@ -137,7 +135,7 @@ nav {
   z-index: 40;
 }
 
-/* ✅ MOBILE FIX: keep brand left, hamburger right, menu drops below */
+/* ✅ MOBILE: brand left, hamburger right, menu drops below */
 nav { flex-wrap: wrap; }
 .brand { order: 1; flex: 0 1 auto; }
 nav > label { order: 2; margin-left: auto; }
@@ -148,7 +146,7 @@ ul.menu { order: 3; flex-basis: 100%; }
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  flex: 1; /* ✅ keeps brand left + pushes hamburger right */
+  flex: 1; /* keeps brand left + pushes hamburger right */
 }
 
 .brand img.logo { height: 45px; width: auto; }
@@ -246,7 +244,8 @@ ul.menu li a:hover {
   transform: translateY(-2px);
 }
 
-/* HERO */
+
+
 /* HERO — TRUE FLEX CENTER */
 .hero,
 #hero {
@@ -328,6 +327,8 @@ ul.menu li a:hover {
   outline-offset: 3px;
 }
 
+
+
 /* Expertise section */
 .container_one {
   width: 90%;
@@ -396,6 +397,8 @@ ul.menu li a:hover {
   font-weight: 500;
   line-height: 1.55;
 }
+
+
 
 /* Results band */
 .container_two {
@@ -506,6 +509,8 @@ ul.menu li a:hover {
 .bar[data-year="2022"] { --height: 190px; }
 .bar[data-year="2023"] { --height: 225px; }
 .bar[data-year="2024"] { --height: 260px; }
+
+
 
 /* Contact Section */
 .contact {
@@ -629,32 +634,36 @@ footer a:hover { text-decoration: underline; }
     --nav-link-size: 1.05rem;
   }
 
-  /* ✅ DESKTOP NAV FIX */
-  nav { 
-    padding: 0.65rem 0; 
+  /* ✅ TEACHER STYLE HEADER: logo left, links right, one row */
+  nav{
+    padding: 0.65rem 0;
     flex-wrap: nowrap;         
+    align-items: center;
   }
 
-  /* reset mobile ordering */
-  .brand { 
-    order: 0;                  
-    flex: 0 0 auto; 
-    margin-right: auto;        
+  .brand{
+    order: 0;
+    flex: 0 0 auto;
+  }
 
-  /* hide hamburger and show menu */
-  nav > label { display: none !important; }
+  /* hide hamburger on desktop */
+  nav > label{ display: none !important; }
 
-  ul.menu {
-    order: 1;                  
+  /* menu becomes horizontal and pushes to right */
+  ul.menu{
+    order: 1;
     display: flex;
     gap: 1.25rem;
-    margin: 0 0 0 auto;        
+
     width: auto;
+    flex-basis: auto;
+
+    margin: 0 0 0 auto;        
     max-height: none;
     opacity: 1;
     overflow: visible;
+
     text-align: left;
-    flex-basis: auto;
   }
 
   ul.menu li a { padding: 0.6rem 0.9rem; }
@@ -662,31 +671,15 @@ footer a:hover { text-decoration: underline; }
   /* hero */
   .hero { height: 60vh; }
 
-.site-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  /* ✅ keep hero content centered (matches your teacher screenshot) */
+  .site-inner { justify-content: center; align-items: center; }
+  .blur-block { max-width: 62%; text-align: center; margin: 0 auto; }
+  .hero h2 { font-size: 1.55rem; text-align: center; }
+  .hero p { font-size: 1.05rem; text-align: center; }
+  .cta { margin: 0.75rem auto 0; }
 
-.blur-block {
-  max-width: 62%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 1.55rem;
-  text-align: center;
-}
-
-.hero p {
-  font-size: 1.05rem;
-  text-align: center;
-}
-
-.cta {
-  margin: 0.75rem auto 0;
-}
+  /* services 2 columns */
+  .services-list { grid-template-columns: repeat(2, 1fr); }
 
   /* results layout becomes 2 columns */
   .profit_growth {
@@ -716,9 +709,11 @@ footer a:hover { text-decoration: underline; }
 
   .services-list { grid-template-columns: repeat(3, 1fr); }
 
-  .blur-block { max-width: 70%; padding: 1rem 1.25rem; }
+  /* keep centered for large too (teacher screenshot look) */
+  .blur-block { max-width: 70%; padding: 1rem 1.25rem; margin: 0 auto; }
   .hero h2 { font-size: 1.75rem; }
   .hero p { font-size: 1.1rem; }
+  .cta { margin: 0.75rem auto 0; }
 
   #bar-chart { height: 280px; gap: 1rem; }
   .bar::after { font-size: 0.95rem; bottom: -22px; }
@@ -739,6 +734,4 @@ footer a:hover { text-decoration: underline; }
     transform: none !important;
   }
 }
-
-
 
